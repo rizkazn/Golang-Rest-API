@@ -1,0 +1,119 @@
+GET http://localhost:8080/api/v1/products/ HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/products/search/name?name=black HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/products/order/name HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/products/order/catId HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/products/order/time HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/products/order/price HTTP/1.1
+
+###
+POST http://localhost:8080/api/v1/products/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id" : 10,
+    "Product_name" : "Vietnam Drip Coffee",
+    "Price" : 25000,
+    "Product_image" : "https://res.cloudinary.com/rizkazn/image/upload/v1636957646/Product/68478f55-0c11-4bb2-9295-aaad81bbdbf8_jv5k5f.jpg",
+    "Category_id" : 1
+}
+
+###
+PUT http://localhost:8080/api/v1/products/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Product_name" : "Vietnam Drip",
+    "Price" : 20000,
+    "Category_id" : 1
+}
+
+### 
+DELETE http://localhost:8080/api/v1/products/10 HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/categories/ HTTP/1.1
+
+###
+POST http://localhost:8080/api/v1/categories/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id" : 4,
+    "Category_name" : "Tea",
+    "Category_image" : "https://res.cloudinary.com/rizkazn/image/upload/v1637031891/Product/cc7z6wwm0y2dmozagkbq.jpg"
+}
+
+###
+PUT http://localhost:8080/api/v1/categories/4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Category_name" : "Milk"
+}
+
+### 
+DELETE http://localhost:8080/api/v1/categories/3 HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/histories/ HTTP/1.1
+
+###
+POST http://localhost:8080/api/v1/histories/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id" : 2,
+    "No_invoice" : "1006",
+    "Cashier" : "Nancy",
+    "Orders" : "Chicken Katsu",
+    "Amount" : 60000
+}
+
+###
+PUT http://localhost:8080/api/v1/histories/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "No_invoice" : 1006,
+    "Cashier" : "Nancy",
+    "Orders" : "Salmon Truffle",
+    "Amount" : 60000
+}
+
+### 
+DELETE http://localhost:8080/api/v1/histories/2 HTTP/1.1
+
+###
+GET http://localhost:8080/api/v1/users/ HTTP/1.1
+
+###
+POST http://localhost:8080/api/v1/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "Id": 2,
+    "Name": "Wahyu Saefulloh",
+    "Username": "wsaeful",
+    "Email": "wahyus@gmail.com",
+    "Password": "wayuyu",
+    "Role": "customer"
+}
+
+###
+POST http://localhost:8080/api/v1/auth/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "Username": "wsaeful",
+    "Password": "wayuyu"
+}
